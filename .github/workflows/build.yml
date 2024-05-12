@@ -93,7 +93,7 @@ jobs:
           ./../mupen64plus-core/.github/workflows/scripts/ci_build.sh ${{ matrix.arch }} ${{ matrix.cc }}
       - name: Backup dependencies, etc...
         run: |
-          ./.github/workflows/scripts/ci_backup_mingw_deps.sh ${{ matrix.env }}
+          ./../mupen64plus-core/.github/workflows/scripts/ci_backup_mingw_deps.sh ${{ matrix.env }}
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
