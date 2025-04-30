@@ -13,9 +13,9 @@ jobs:
             tsk: Crossbuild
           - deps: g++-multilib gcc-multilib
             tsk: Multilib
-          - deps: crossbuild-essential-i386 g++-i686-linux-gnu gcc-i686-linux-gnu libvulkan-dev libvulkan-dev:i386
+          - deps: crossbuild-essential-i386 g++-i686-linux-gnu gcc-i686-linux-gnu libvulkan-dev:i386
             tsk: Crossbuild + Workaround
-          - deps: g++-multilib gcc-multilib libvulkan-dev libvulkan-dev:i386
+          - deps: g++-multilib gcc-multilib libvulkan-dev:i386
             tsk: Multilib + Workaround
     name: Ubuntu 24.04 / ${{ matrix.tsk }}
     runs-on: ubuntu-24.04
@@ -25,4 +25,4 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get --allow-change-held-packages --allow-downgrades --fix-broken --no-upgrade --reinstall -y install build-essential clang g++ gcc git nasm pkg-config libsdl2-dev libsdl2-dev:i386 ${{ matrix.deps }}
+          sudo apt-get --allow-change-held-packages --allow-downgrades --fix-broken --no-upgrade --reinstall -y install build-essential clang g++ gcc git nasm pkg-config libsdl2-dev:i386 ${{ matrix.deps }}
