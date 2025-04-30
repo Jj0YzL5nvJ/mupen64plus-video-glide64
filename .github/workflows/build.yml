@@ -26,4 +26,5 @@ jobs:
           sudo dpkg --add-architecture i386
           sudo apt-get update
           sudo apt-mark hold grub-common grub-efi-amd64-bin shim-signed
+          sudo apt-mark hold python3 python3-apt
           sudo apt-get --reinstall -y install build-essential clang g++ gcc git nasm pkg-config libsdl2-dev:i386 ${{ matrix.deps }}
