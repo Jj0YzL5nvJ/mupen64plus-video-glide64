@@ -25,4 +25,4 @@ jobs:
         run: |
           sudo dpkg --add-architecture i386
           sudo apt-get update
-          sudo apt-get --allow-downgrades --fix-broken -y install build-essential clang g++ gcc git nasm pkg-config libsdl2-dev libsdl2-dev:i386 ${{ matrix.deps }}
+          sudo apt-get --allow-downgrades --fix-broken --reinstall -y install build-essential clang g++ gcc git nasm pkg-config libsdl2-dev libsdl2-dev:i386 ${{ matrix.deps }}
